@@ -1,3 +1,14 @@
+# Добрый день, Алексей! 
+# Task 1.1, 1.2 выполнены. Все установлено на Win10 по инструкции, кроме декодирования токена из base64. Оно выполнено в PowerShell  
+# $MYTEXT = 'xxxxxxxxxxxxxxxxx'
+# $DECODED = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String($MYTEXT))
+# Write-Output $DECODED
+# Могу предоставить текстовый лог всей установки, которым пока не стала грузить репозиторий (и тебя :).
+# 
+# task1.yaml  содержит манифест
+# screenshot_dashboard_two_nginx.jpg показана склейка двух скриншотов Dashboard Kubernetes
+# С Уважением, Татьяна
+
 # Task 1.1
 Requirements:
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
