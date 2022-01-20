@@ -7,6 +7,8 @@
 # 
 # task1.yaml  содержит манифест
 # screenshot_dashboard_two_nginx.jpg показана склейка двух скриншотов Dashboard Kubernetes
+# inside_minikube.txt содержит сокращенный лог внутри minikube
+#
 # С Уважением, Татьяна
 
 # Task 1.1

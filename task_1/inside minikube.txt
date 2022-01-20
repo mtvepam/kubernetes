@@ -1,0 +1,68 @@
+# поскольку service в работе не заявлено, вебсерверы не доступны вне minikube
+# заходим внутрь и убеждаемся, что nginx работает
+
+D:\EPAM\stream 23\KubernatesTask\task_1>minikube ssh
+                         _             _
+            _         _ ( )           ( )
+  ___ ___  (_)  ___  (_)| |/')  _   _ | |_      __
+/' _ ` _ `\| |/' _ `\| || , <  ( ) ( )| '_`\  /'__`\
+| ( ) ( ) || || ( ) || || |\`\ | (_) || |_) )(  ___/
+(_) (_) (_)(_)(_) (_)(_)(_) (_)`\___/'(_,__/'`\____)
+
+$ docker container ls
+CONTAINER ID   IMAGE                                      COMMAND                  CREATED          STATUS          PORTS     NAMES
+46457405cbd3   nginx                                      "/docker-entrypoint.…"   6 minutes ago    Up 6 minutes              k8s_nginx_nginx-8d545c96d-gvs8l_default_66abfd81-d944-4f30-823e-399886cc5210_0
+3666e994cfeb   k8s.gcr.io/pause:3.6                       "/pause"                 6 minutes ago    Up 6 minutes              k8s_POD_nginx-8d545c96d-gvs8l_default_66abfd81-d944-4f30-823e-399886cc5210_0
+438c3e36396e   nginx                                      "/docker-entrypoint.…"   6 minutes ago    Up 6 minutes              k8s_nginx_nginx-8d545c96d-w54tc_default_d4fdfd6c-393f-44f1-af77-c0bd7426c92a_0
+3068cf5a824e   k8s.gcr.io/pause:3.6                       "/pause"                 7 minutes ago    Up 7 minutes              k8s_POD_nginx-8d545c96d-w54tc_default_d4fdfd6c-393f-44f1-af77-c0bd7426c92a_0
+......
+
+$ docker network inspect bridge
+[
+    {
+        "Name": "bridge",
+        .....
+        "Containers": {
+            ....
+            "3068cf5a824e1e2381676c7bd29feb02933a852a627569d880faac9cfe9f1fdf": {
+                "Name": "k8s_POD_nginx-8d545c96d-w54tc_default_d4fdfd6c-393f-44f1-af77-c0bd7426c92a_0",
+                "EndpointID": "c64703a9eb7e2680571b5ff0dbc3cafe52f5e9007f28dbde3157d0473512fa5a",
+                "MacAddress": "02:42:ac:11:00:08",
+                "IPv4Address": "172.17.0.8/16",
+                "IPv6Address": ""
+            },
+            "3666e994cfeb7518c7554c2146ac7d64ad72018569282373fb456f665cf706a9": {
+                "Name": "k8s_POD_nginx-8d545c96d-gvs8l_default_66abfd81-d944-4f30-823e-399886cc5210_0",
+                "EndpointID": "47dda4b665fba31d2cd61bdeec0ef209f7094e7d350c8b8995ea5f11f794cf4c",
+                "MacAddress": "02:42:ac:11:00:07",
+                "IPv4Address": "172.17.0.7/16",
+                "IPv6Address": ""
+            },....]
+
+$ curl http://172.17.0.7
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+$
+
+
