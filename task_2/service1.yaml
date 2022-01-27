@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  name: appv1
+  labels:
+    app: appv1
+spec:
+  selector:
+    app: appv1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+status:
+  loadBalancer: {}
