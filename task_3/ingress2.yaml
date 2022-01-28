@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: two-app
+  namespace: default
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /web
+        pathType: Prefix
+        backend:
+          service: 
+             name: appv1
+             port: 
+                number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+             name: minio-app
+             port: 
+                number: 9001
