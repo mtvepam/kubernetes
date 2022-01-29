@@ -1,9 +1,7 @@
-Hello Alexey!
-To save your time here is a Canary deployment result:
+## Hello Alexey!
+### To save your time here is a Canary deployment result:
 ![](17.jpg)
-The following text represents the same in more details  :)
-Kind regards
-Tatiana
+### The following text represents the same in more details. Kind regards, Tatiana
 
 ### ConfigMap & Secrets
 Try connect to pod with curl (curl pod_ip_address). What happens?
@@ -39,11 +37,11 @@ Let's see what the ingress controller creates for us
 ![](11.jpg)
 ![](12.jpg)
 
-### HOMEWORK
-In Minikube in namespace kube-system, there are many different pods running. Your task is to figure out who creates them, and who makes sure they are running (restores them after deletion).
+## HOMEWORK
+### In Minikube in namespace kube-system, there are many different pods running. Your task is to figure out who creates them, and who makes sure they are running (restores them after deletion).
 ![](13.jpg)
 
-Implement Canary deployment of an application via Ingress. Traffic to canary deployment should be redirected if you add "canary:always" in the header, otherwise it should go to regular deployment. Set to redirect a percentage of traffic to canary deployment.
+### Implement Canary deployment of an application via Ingress. Traffic to canary deployment should be redirected if you add "canary:always" in the header, otherwise it should go to regular deployment. Set to redirect a percentage of traffic to canary deployment.
 ![](14.jpg)
 ![](15.jpg)
 ![](16.jpg)

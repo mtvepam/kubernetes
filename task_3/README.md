@@ -1,4 +1,6 @@
-# Hello Alexey!
+## Hello Alexey!
+### Please pay attention on comments in the screenshots. Kind regards Tatiana
+
 ## Homework
 ### We published minio "outside" using nodePort. Do the same but using ingress.
 ![](2.jpg)
